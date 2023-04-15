@@ -30,7 +30,9 @@ function addData() {
 
 function removeAdmin() {
   const filteredEmployees = arr.filter(arr => arr.profession !== "admin");
-  console.log("Admin removed. New employee array: ", filteredEmployees);
+  arr.length = 0; // Clear the original array
+  Array.prototype.push.apply(arr, filteredEmployees); // Add filtered employees back to the original array
+  console.log(arr);
 }
 
 function concatenateArray() {
