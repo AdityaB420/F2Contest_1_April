@@ -7,20 +7,18 @@ let arr = [
 function PrintDeveloperbyMap() {
   const developers = arr.filter(arr => arr.profession === "developer");
   const developerNames = developers.map(developer => developer.name);
-  console.log("Developers by Map: ", developerNames);
+  console.log("Developers by Map: ", developers);
 }
-PrintDeveloperbyMap()
 
 function PrintDeveloperbyForEach() {
   const developers = [];
   arr.forEach(function(arr) {
       if (arr.profession === "developer") {
-          developers.push(arr.name);
+          developers.push(arr);
       }
   });
   console.log("Developers by forEach: ", developers);
 }
-PrintDeveloperbyForEach()
 
 function addData() {
   const newEmployee = { id: 4, name: "Skylar White", age: "23", profession: "intern" };
@@ -29,13 +27,11 @@ function addData() {
   console.log("New Employee array: ", arr);
 
 }
-addData()
 
 function removeAdmin() {
   const filteredEmployees = arr.filter(arr => arr.profession !== "admin");
   console.log("Admin removed. New employee array: ", filteredEmployees);
 }
-removeAdmin();
 
 function concatenateArray() {
   const newEmployees = [
@@ -46,4 +42,3 @@ function concatenateArray() {
   const allEmployees = arr.concat(newEmployees);
   console.log("Concatenated employee array: ", allEmployees);
 }
-concatenateArray()
